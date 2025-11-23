@@ -1,33 +1,37 @@
 :root {
     --bkg: #e3f1e8;
-    --button: #8db49c;
-    --hover: #86b1cb;
     --txt: #3a4b40;
+    --hover: #86b1cb;
+    --button: #8db49c;
     --diasbled: #9aaebb;
 }
 
+/* General */
+
 body {
     background-color: var(--bkg);
-    width: fit-content;
-    margin: auto;
+    color:var(--txt);
     font-family: monospace;
     font-size: 18px;
-    color:var(--txt);
+    margin: auto;
+    width: fit-content;
 }
 
 ::selection {
     background-color: var(--hover);
 }
 
+/* Screen display */
+
 #screen {
     margin-bottom: 8px;
 }
 
 #display, #result {
-    height: 32px;
-    text-align: right;
     align-content: center;
+    height: 32px;
     padding: 0 8px;
+    text-align: right;
 }
 
 #display {
@@ -39,14 +43,16 @@ body {
     font-weight: bold;
 }
 
+/* Buttons */
+
 button {
-    border:none;
-    border-radius: 8px;
     background-color: var(--button);
+    border: none;
+    border-radius: 8px;
     font-family: inherit;
     font-size: inherit;
-    width: 80px;
     height: 60px;
+    width: 80px;
 }
 
 button:hover {
@@ -69,6 +75,6 @@ button:disabled {
 }
 
 .row {
-    display: flex;
     column-gap: 8px;
+    display: flex;
 }
