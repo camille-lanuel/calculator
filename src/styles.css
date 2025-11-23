@@ -17,12 +17,16 @@ body {
     font-family: "PT Mono", monospace;
     font-size: 18px;
     margin: auto;
-    padding: 8px;
+    padding: 16px;
     width: fit-content;
 }
 
 ::selection {
     background-color: var(--hover);
+}
+
+h1 {
+    margin-top: 0;
 }
 
 #calculator, h1 {
