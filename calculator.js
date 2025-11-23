@@ -64,13 +64,13 @@ function operate()
         case "+":
             res = add(Number(a), Number(b));
             break;
-        case "-":
+        case "−":
             res = subtract(Number(a), Number(b));
             break;
-        case "*":
+        case "×":
             res = multiply(Number(a), Number(b));
             break;
-        case "/":
+        case "÷":
             res = divide(Number(a), Number(b));
             break;
         default:
