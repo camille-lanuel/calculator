@@ -1,0 +1,74 @@
+:root {
+    --bkg: #e3f1e8;
+    --button: #8db49c;
+    --hover: #86b1cb;
+    --txt: #3a4b40;
+    --diasbled: #9aaebb;
+}
+
+body {
+    background-color: var(--bkg);
+    width: fit-content;
+    margin: auto;
+    font-family: monospace;
+    font-size: 18px;
+    color:var(--txt);
+}
+
+::selection {
+    background-color: var(--hover);
+}
+
+#screen {
+    margin-bottom: 8px;
+}
+
+#display, #result {
+    height: 32px;
+    text-align: right;
+    align-content: center;
+    padding: 0 8px;
+}
+
+#display {
+    font-size: 20px;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    border:none;
+    border-radius: 8px;
+    background-color: var(--button);
+    font-family: inherit;
+    font-size: inherit;
+    width: 80px;
+    height: 60px;
+}
+
+button:hover {
+    background-color: var(--hover);
+    cursor:pointer;
+}
+
+button#clear, button#undo {
+    width: 50%;
+}
+
+button:disabled {
+    background-color: var(--diasbled);
+}
+
+#buttons {
+    display:flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.row {
+    display: flex;
+    column-gap: 8px;
+}
