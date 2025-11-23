@@ -14,10 +14,20 @@ function displayResult()
     document.getElementById("result").textContent = res;
 }
 
+function disableComma()
+{
+    document.getElementById("comma").disabled = true;
+}
+
+function enableComma()
+{
+    document.getElementById("comma").disabled = false;
+}
+
 function storeNumber(str)
 {
     if(str==".") {
-        document.getElementById("comma").disabled = true;
+        disableComma();
     }
     if (store_in_a) {
         a += str;
@@ -31,7 +41,7 @@ function getOperator(str)
 {
     operator = str;
     store_in_a = false;
-    document.getElementById("comma").disabled = false;
+    enableComma();
     displayOperation();
 }
 
@@ -49,10 +59,18 @@ function reset()
 function undo()
 {
     if(store_in_a) {
+        console.log(a[a.length-1]);
+        if(a[-1] === ".") {
+            enableComma();
+        }
         a = a.slice(0, a.length-1);
     } else if(b.length == 0) {
         operator = "";
+        store_in_a = true;
     } else {
+        if(b[b.length-1] === ".") {
+            enableComma();
+        }
         b = b.slice(0, b.length-1);
     }
     displayOperation();
@@ -79,7 +97,7 @@ function operate()
     a = res;
     store_in_a = true;
     b = "";
-    document.getElementById("comma").disabled = false;
+    enableComma();
     res = Math.round((res + Number.EPSILON) * 100000) / 100000;
     displayResult();
 }
