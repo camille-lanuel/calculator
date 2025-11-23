@@ -80,6 +80,7 @@ function operate()
     store_in_a = true;
     b = "";
     document.getElementById("comma").disabled = false;
+    res = Math.round((res + Number.EPSILON) * 100000) / 100000;
     displayResult();
 }
 
