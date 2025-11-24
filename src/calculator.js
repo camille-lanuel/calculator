@@ -99,6 +99,7 @@ function operate()
     b = "";
     enableComma();
     res = Math.round((res + Number.EPSILON) * 100000) / 100000;
+    document.getElementById("display").textContent += " = ";
     displayResult();
 }
 
