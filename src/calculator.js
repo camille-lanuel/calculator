@@ -64,6 +64,9 @@ function storeNumber(str)
 
 function getOperator(str)
 {
+    if(operation[0] == "") {
+        operation[0] = "0";
+    }
     operation[1] = str;
     i = 2;
     enableComma();
