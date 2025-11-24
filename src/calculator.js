@@ -1,19 +1,16 @@
-let a = "";
-let b = "";
-let store_in_a = true;
-let operator = "";
-let res = 0;
+let operation = ["", "", ""];
+let i = 0;
 
 // UI-related functions
 
 function displayOperation()
 {
-    document.getElementById("display").textContent = a + " " + operator + " " + b;
+    document.getElementById("display").textContent = operation[0] + " " + operation[1] + " " + operation[2];
 }
 
 function displayResult()
 {
-    document.getElementById("result").textContent = res;
+    document.getElementById("result").textContent = Number(operation[0]);
 }
 
 function disableComma()
@@ -30,11 +27,8 @@ function enableComma()
 
 function reset()
 {
-    a = "";
-    b = "";
-    operator = "";
-    store_in_a = true;
-    res = 0;
+    operation = ["", "", ""];
+    i = 0;
     enableComma();
     displayOperation();
     displayResult();
@@ -42,20 +36,15 @@ function reset()
 
 function undo()
 {
-    if(store_in_a) {
-        console.log(a[a.length-1]);
-        if(a[-1] === ".") {
-            enableComma();
-        }
-        a = a.slice(0, a.length-1);
-    } else if(b.length == 0) {
-        operator = "";
-        store_in_a = true;
-    } else {
-        if(b[b.length-1] === ".") {
-            enableComma();
-        }
-        b = b.slice(0, b.length-1);
+    if(operation[i] === '.') {
+        enableComma();
+    }
+    operation[i] = operation[i].slice(0, -1);
+    if(operation[i].length == 0 && i > 0) {
+        i--;
+    }
+    if(operation[0].length == 0) {
+        displayResult();
     }
     displayOperation();
 }
@@ -64,48 +53,44 @@ function undo()
 
 function storeNumber(str)
 {
-    if(str==".") {
+    if(str == '.') {
         disableComma();
     }
-    if (store_in_a) {
-        a += str;
-    } else {
-        b += str;
-    }
+    operation[i] += str;
     displayOperation();
 }
 
 function getOperator(str)
 {
-    operator = str;
-    store_in_a = false;
+    operation[1] = str;
+    i = 2;
     enableComma();
     displayOperation();
 }
 
 function operate()
 {
-    switch(operator) {
+    let res = 0;
+    switch(operation[1]) {
         case "+":
-            res = add(Number(a), Number(b));
+            res = add(Number(operation[0]), Number(operation[2]));
             break;
         case "−":
-            res = subtract(Number(a), Number(b));
+            res = subtract(Number(operation[0]), Number(operation[2]));
             break;
         case "×":
-            res = multiply(Number(a), Number(b));
+            res = multiply(Number(operation[0]), Number(operation[2]));
             break;
         case "÷":
-            res = divide(Number(a), Number(b));
+            res = divide(Number(operation[0]), Number(operation[2]));
             break;
         default:
             res = 0;
     }
-    a = res.toString();
-    store_in_a = true;
-    b = "";
-    enableComma();
     res = Math.round((res + Number.EPSILON) * 100000) / 100000;
+    operation = [res.toString(), "", ""];
+    i = 0;
+    enableComma();
     document.getElementById("display").textContent += " = ";
     if(Number.isNaN(res)) {
         reset();
