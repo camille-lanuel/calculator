@@ -13,7 +13,7 @@ function displayOperation()
 
 function displayResult()
 {
-    document.getElementById("result").textContent = Number(operation[0]);
+    document.getElementById("result").textContent = Number(operation[0]); // to convert empty string to 0
 }
 
 function disableComma()
