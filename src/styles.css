@@ -90,7 +90,7 @@ button:hover {
     cursor:pointer;
 }
 
-button#clear, button#undo {
+button#clear, button#delete {
     width: 50%;
 }
 

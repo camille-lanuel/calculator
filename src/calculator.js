@@ -34,7 +34,7 @@ function reset()
     displayResult();
 }
 
-function undo()
+function del()
 {
     if(operation[i] === '.') {
         enableComma();
