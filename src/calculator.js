@@ -1,6 +1,8 @@
 let operation = ["", "", ""];
 let i = 0;
 
+const comma = document.getElementById("comma");
+
 // UI-related functions
 
 function displayOperation()
@@ -15,12 +17,12 @@ function displayResult()
 
 function disableComma()
 {
-    document.getElementById("comma").disabled = true;
+    comma.disabled = true;
 }
 
 function enableComma()
 {
-    document.getElementById("comma").disabled = false;
+    comma.disabled = false;
 }
 
 // reset, undo
@@ -85,7 +87,7 @@ function operate()
             res = divide(Number(operation[0]), Number(operation[2]));
             break;
         default:
-            res = 0;
+            res = NaN;
     }
     res = Math.round((res + Number.EPSILON) * 100000) / 100000;
     operation = [res.toString(), "", ""];
