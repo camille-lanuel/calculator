@@ -36,15 +36,19 @@ h1 {
     padding: 8px;
 }
 
+#calculator {
+    margin-bottom: 40px;
+}
+
 footer {
-  bottom: 0;
-background-color: var(--bkg);
-    border: 1px solid var(--button);
+    bottom: 0;
+    background-color: var(--bkg);
+    border-top: 1px solid var(--button);
     left: 0;
-  padding: 8px 0;
-  position: fixed;
-text-align: center;
-  width: 100%;
+    padding: 8px 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
 }
 
 /* Screen display */
