@@ -4,6 +4,8 @@ let store_in_a = true;
 let operator = "";
 let res = 0;
 
+// UI-related functions
+
 function displayOperation()
 {
     document.getElementById("display").textContent = a + " " + operator + " " + b;
@@ -24,26 +26,7 @@ function enableComma()
     document.getElementById("comma").disabled = false;
 }
 
-function storeNumber(str)
-{
-    if(str==".") {
-        disableComma();
-    }
-    if (store_in_a) {
-        a += str;
-    } else {
-        b += str;
-    }
-    displayOperation();
-}
-
-function getOperator(str)
-{
-    operator = str;
-    store_in_a = false;
-    enableComma();
-    displayOperation();
-}
+// reset, undo
 
 function reset()
 {
@@ -73,6 +56,29 @@ function undo()
         }
         b = b.slice(0, b.length-1);
     }
+    displayOperation();
+}
+
+// calculator logic
+
+function storeNumber(str)
+{
+    if(str==".") {
+        disableComma();
+    }
+    if (store_in_a) {
+        a += str;
+    } else {
+        b += str;
+    }
+    displayOperation();
+}
+
+function getOperator(str)
+{
+    operator = str;
+    store_in_a = false;
+    enableComma();
     displayOperation();
 }
 
