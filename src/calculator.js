@@ -34,7 +34,8 @@ function reset()
     b = "";
     operator = "";
     store_in_a = true;
-    res = "0";
+    res = 0;
+    enableComma();
     displayOperation();
     displayResult();
 }
