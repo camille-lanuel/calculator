@@ -101,12 +101,15 @@ function operate()
         default:
             res = 0;
     }
-    a = res;
+    a = res.toString();
     store_in_a = true;
     b = "";
     enableComma();
     res = Math.round((res + Number.EPSILON) * 100000) / 100000;
     document.getElementById("display").textContent += " = ";
+    if(Number.isNaN(res)) {
+        reset();
+    }
     displayResult();
 }
 
@@ -129,7 +132,7 @@ function divide(a, b)
 {
     if(b == 0) {
         alert("Math Error");
-        return 0;
+        return NaN;
     } else {
         return a / b;
     }
