@@ -39,7 +39,7 @@ function reset()
 
 function del()
 {
-    if(operation[i] == '.') {
+    if(operation[i][operation[i].length-1] == '.') {
         enableComma();
     }
     operation[i] = operation[i].slice(0, -1);
@@ -68,6 +68,9 @@ function getOperator(str)
     if(operation[0] == "") {
         operation[0] = "0";
     }
+    if(operation[1] != "") {
+        operate();
+    }   
     operation[1] = str;
     i = 2;
     enableComma();
@@ -76,6 +79,7 @@ function getOperator(str)
 
 function operate()
 {
+    displayOperation();
     switch(operation[1]) {
         case "+":
             operation[0] = add(Number(operation[0]), Number(operation[2]));
@@ -90,23 +94,23 @@ function operate()
             operation[0] = divide(Number(operation[0]), Number(operation[2]));
             break;
         default:
-            operation[0] = NaN;
+            break;
     }
 
-    operation[0] = Math.round((operation[0] + Number.EPSILON) * 100000) / 100000;
+    operation[0] = Math.round((Number(operation[0]) + Number.EPSILON) * 100000) / 100000;
     if(Number.isNaN(operation[0])) {
         reset();
     }
+    display.textContent += " = ";
     operation = [operation[0].toString(), "", ""];
+    displayResult();
+
     i = 0;
     if(operation[0].includes('.')) {
         disableComma();
     } else {
         enableComma();
     }
-
-    display.textContent += " = ";
-    displayResult();
 }
 
 function add(a, b)
