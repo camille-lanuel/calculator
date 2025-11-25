@@ -123,7 +123,6 @@ function divide(a, b)
     if(b == 0) {
         alert("Math Error");
         return NaN;
-    } else {
-        return a / b;
     }
+    return a / b;
 }
