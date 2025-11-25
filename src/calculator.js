@@ -2,17 +2,18 @@ let operation = ["", "", ""];
 let i = 0;
 
 const comma = document.getElementById("comma");
+const display = document.getElementById("display");
 
 // UI-related functions
 
 function displayOperation()
 {
-    document.getElementById("display").textContent = operation[0] + " " + operation[1] + " " + operation[2];
+    display.textContent = operation[0] + " " + operation[1] + " " + operation[2];
 }
 
 function displayResult()
 {
-    document.getElementById("result").textContent = Number(operation[0]);
+    document.getElementById("result").textContent = Number(operation[0]); // to convert empty string to 0
 }
 
 function disableComma()
@@ -38,7 +39,7 @@ function reset()
 
 function del()
 {
-    if(operation[i] === '.') {
+    if(operation[i] == '.') {
         enableComma();
     }
     operation[i] = operation[i].slice(0, -1);
@@ -53,7 +54,7 @@ function del()
 
 // calculator logic
 
-function storeNumber(str)
+function getDigit(str)
 {
     if(str == '.') {
         disableComma();
@@ -75,31 +76,36 @@ function getOperator(str)
 
 function operate()
 {
-    let res = 0;
     switch(operation[1]) {
         case "+":
-            res = add(Number(operation[0]), Number(operation[2]));
+            operation[0] = add(Number(operation[0]), Number(operation[2]));
             break;
         case "−":
-            res = subtract(Number(operation[0]), Number(operation[2]));
+            operation[0] = subtract(Number(operation[0]), Number(operation[2]));
             break;
         case "×":
-            res = multiply(Number(operation[0]), Number(operation[2]));
+            operation[0] = multiply(Number(operation[0]), Number(operation[2]));
             break;
         case "÷":
-            res = divide(Number(operation[0]), Number(operation[2]));
+            operation[0] = divide(Number(operation[0]), Number(operation[2]));
             break;
         default:
-            res = NaN;
+            operation[0] = NaN;
     }
-    res = Math.round((res + Number.EPSILON) * 100000) / 100000;
-    operation = [res.toString(), "", ""];
-    i = 0;
-    enableComma();
-    document.getElementById("display").textContent += " = ";
-    if(Number.isNaN(res)) {
+
+    operation[0] = Math.round((operation[0] + Number.EPSILON) * 100000) / 100000;
+    if(Number.isNaN(operation[0])) {
         reset();
     }
+    operation = [operation[0].toString(), "", ""];
+    i = 0;
+    if(operation[0].includes('.')) {
+        disableComma();
+    } else {
+        enableComma();
+    }
+
+    display.textContent += " = ";
     displayResult();
 }
 
