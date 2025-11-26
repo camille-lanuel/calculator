@@ -4,12 +4,8 @@ It rounds numbers to 5 digits to avoid floating point number errors such as $0.1
 
 ![](screenshot.png)
 
+# TODO
 
+- [ ] gérer cas de string nulle proprement
 
-
-
-
-
-
-
-
+- [ ] 
