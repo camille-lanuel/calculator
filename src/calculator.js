@@ -89,6 +89,7 @@ function operate()
 {
     operation[2] = getNumber(operation[2]);
     displayOperation();
+    display.textContent += " = ";
     switch(operation[1]) {
         case "+":
             operation[0] = getNumber(operation[0]) + getNumber(operation[2]);
@@ -110,7 +111,6 @@ function operate()
     if(Number.isNaN(operation[0])) {
         reset();
     }
-    display.textContent += " = ";
     operation = [operation[0].toString(), "", ""];
     displayResult();
 
