@@ -13,7 +13,7 @@ function displayOperation()
 
 function displayResult()
 {
-    document.getElementById("result").textContent = getNumber(operation[0]);
+    document.getElementById("result").textContent = Number(operation[0]);
 }
 
 function disableComma()
@@ -58,6 +58,9 @@ function getDigit(str)
 {
     if(str == '.') {
         disableComma();
+        if(operation[i] == "") {
+            operation[i] = "0";
+        }
     }
     operation[i] += str;
     displayOperation();
@@ -77,28 +80,19 @@ function getOperator(str)
     displayOperation();
 }
 
-function getNumber(str)
-{
-    if(str == ".") {
-        return 0;
-    }
-    return Number(str);
-}
-
 function operate()
 {
-    operation[2] = getNumber(operation[2]);
     displayOperation();
     display.textContent += " = ";
     switch(operation[1]) {
         case "+":
-            operation[0] = getNumber(operation[0]) + getNumber(operation[2]);
+            operation[0] = Number(operation[0]) + Number(operation[2]);
             break;
         case "−":
-            operation[0] = getNumber(operation[0]) - getNumber(operation[2]);
+            operation[0] = Number(operation[0]) - Number(operation[2]);
             break;
         case "×":
-            operation[0] = getNumber(operation[0]) * getNumber(operation[2]);
+            operation[0] = Number(operation[0]) * Number(operation[2]);
             break;
         case "÷":
             operation[0] = divide(Number(operation[0]), Number(operation[2]));
