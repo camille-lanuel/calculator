@@ -86,7 +86,7 @@ function getOperator(str)
 function operate()
 {
     displayOperation();
-    display.textContent += " = ";
+    display.textContent += " =";
     switch(operation[1]) {
         case "+":
             operation[0] = Number(operation[0]) + Number(operation[2]);
