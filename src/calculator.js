@@ -87,6 +87,7 @@ function getNumber(str)
 
 function operate()
 {
+    operation[2] = getNumber(operation[2]);
     displayOperation();
     switch(operation[1]) {
         case "+":
