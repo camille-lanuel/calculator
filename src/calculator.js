@@ -1,5 +1,5 @@
-let operation = ["", "", ""];
-let i = 0;
+let operation = ["", "", ""];  // 1st operand, operator, 2nd operand
+let i = 0;  // index for where we are in the operation
 
 const comma = document.getElementById("comma");
 const display = document.getElementById("display");
