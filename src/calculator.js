@@ -56,6 +56,9 @@ function del()
 
 function getDigit(str)
 {
+    if(i == 1) {
+        i++;
+    }
     if(str == '.') {
         disableComma();
         if(operation[i] == "") {
@@ -75,7 +78,7 @@ function getOperator(str)
         operate();
     }   
     operation[1] = str;
-    i = 2;
+    i++;
     enableComma();
     displayOperation();
 }
