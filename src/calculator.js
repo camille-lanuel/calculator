@@ -13,7 +13,7 @@ function displayOperation()
 
 function displayResult()
 {
-    document.getElementById("result").textContent = Number(operation[0]); // to convert empty string to 0
+    document.getElementById("result").textContent = getNumber(operation[0]);
 }
 
 function disableComma()
@@ -77,18 +77,26 @@ function getOperator(str)
     displayOperation();
 }
 
+function getNumber(str)
+{
+    if(str == ".") {
+        return 0;
+    }
+    return Number(str);
+}
+
 function operate()
 {
     displayOperation();
     switch(operation[1]) {
         case "+":
-            operation[0] = add(Number(operation[0]), Number(operation[2]));
+            operation[0] = getNumber(operation[0]) + getNumber(operation[2]);
             break;
         case "−":
-            operation[0] = subtract(Number(operation[0]), Number(operation[2]));
+            operation[0] = getNumber(operation[0]) - getNumber(operation[2]);
             break;
         case "×":
-            operation[0] = multiply(Number(operation[0]), Number(operation[2]));
+            operation[0] = getNumber(operation[0]) * getNumber(operation[2]);
             break;
         case "÷":
             operation[0] = divide(Number(operation[0]), Number(operation[2]));
