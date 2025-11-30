@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="calculator.js" defer></script>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <div id="calculator">
+            <div id="screen">
+                <div id = "display"></div>
+                <div id = "result">0</div>
+            </div>
+            <div id = "buttons">
+                <div class = "row">
+                    <button id="clear" onclick="calculator.reset()">CLEAR</button>
+                    <button id="delete" onclick="calculator.del()">DELETE</button>
+                </div>
+                <div class = "row">
+                    <button onclick="calculator.getDigit(7)">7</button>
+                    <button onclick="calculator.getDigit(8)">8</button>
+                    <button onclick="calculator.getDigit(9)">9</button>
+                    <button onclick="calculator.getOperator('÷')">÷</button>
+                </div>
+                <div class = "row">
+                    <button onclick="calculator.getDigit(4)">4</button>
+                    <button onclick="calculator.getDigit(5)">5</button>
+                    <button onclick="calculator.getDigit(6)">6</button>
+                    <button onclick="calculator.getOperator('×')">×</button>
+                </div>
+                <div class = "row">
+                    <button onclick="calculator.getDigit(1)">1</button>
+                    <button onclick="calculator.getDigit(2)">2</button>
+                    <button onclick="calculator.getDigit(3)">3</button>
+                    <button onclick="calculator.getOperator('−')">−</button>
+                </div>
+                <div class="row">
+                    <button id="comma" onclick="calculator.getComma()">.</button>
+                    <button onclick="calculator.getDigit('0')">0</button>
+                    <button id="equals" onclick="calculator.operate()">=</button>
+                    <button onclick="calculator.getOperator('+')">+</button>
+                </div>
+            </div>
+        </div>
+    <footer>made with <span style="color:#86b1cb">&#x2764</span> by Camomille</footer>
+    </body>
+</html>
