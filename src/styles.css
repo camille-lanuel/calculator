@@ -59,9 +59,13 @@ footer {
 
 #display, #result {
     align-content: center;
+    box-sizing: border-box;
     height: 2rem;
+    max-width: 21.5rem;
     padding: 0 0.5rem;
+    overflow: scroll;
     text-align: right;
+    text-wrap: nowrap;
 }
 
 #display {
