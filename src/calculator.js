@@ -39,7 +39,8 @@ getOperator(str)
 {
     this.left = this.makeValid(this.left);
     if(this.operator != "") {
-        this.operate();
+        let res = this.operate();
+        if(Number.isNaN(res)) return;
         this.needReset = false;
     }
     this.operator = str;
@@ -56,15 +57,17 @@ operate()
     this.left = this.operations[this.operator](Number(this.left), Number(this.right));
     if(Number.isNaN(this.left)) {
         this.reset();
+        return NaN;
     }
-    this.left = Math.round((Number(this.left) + Number.EPSILON) * 100000) / 100000;
-    this.left = (this.left === 0) ? "" : this.left = this.left.toString();
+    let res = Math.round((Number(this.left) + Number.EPSILON) * 100000) / 100000;
+    this.left = (res === 0) ? "" : res.toString();
     this.right = "";
     this.operator = "";
     this.needReset = true;
 
     this.displayResult();
     this.left.includes('.') ? this.disableComma() : this.enableComma();
+    return res;
 }
 
 // UI-related functions
