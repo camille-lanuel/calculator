@@ -14,7 +14,7 @@ body {
     font-family: "PT Mono", monospace;
     font-size: 1.125rem;
     margin: auto;
-    padding: 1rem;
+    padding: 16px;
     max-width: fit-content;
 }
 
@@ -29,12 +29,12 @@ h1 {
 #calculator, h1 {
     background-color: var(--bkg);
     border: 1px solid var(--button);
-    border-radius: 1rem;
-    padding: 0.5rem;
+    border-radius: 16px;
+    padding: 8px;
 }
 
 #calculator {
-    margin-bottom: 2.5rem;
+    margin-bottom: 40px;
 }
 
 footer {
@@ -42,7 +42,7 @@ footer {
     background-color: var(--bkg);
     border-top: 1px solid var(--button);
     left: 0;
-    padding: 0.5rem 0;
+    padding: 8px 0;
     position: fixed;
     text-align: center;
     width: 100%;
@@ -51,15 +51,15 @@ footer {
 /* Screen display */
 
 #screen {
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 #display, #result {
     align-content: center;
     box-sizing: border-box;
     height: 2rem;
-    max-width: 21.5rem;
-    padding: 0 0.5rem;
+    max-width: 362px;
+    padding: 0 8px;
     overflow: scroll;
     text-align: right;
     text-wrap: nowrap;
@@ -79,12 +79,12 @@ footer {
 button {
     background-color: var(--button);
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 8px;
     color: inherit;
     font-family: inherit;
     font-size: inherit;
-    height: 3.75rem;
-    width: 5rem;
+    height: 60px;
+    width: 80px;
 }
 
 button:hover {
@@ -103,10 +103,10 @@ button:disabled {
 #buttons {
     display:flex;
     flex-direction: column;
-    row-gap: 0.5rem;
+    row-gap: 8px;
 }
 
 .row {
-    column-gap: 0.5rem;
+    column-gap: 8px;
     display: flex;
 }
