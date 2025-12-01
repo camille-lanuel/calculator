@@ -15,7 +15,7 @@ class Calculator
         "−": (a, b) => a - b,
         "×": (a, b) => a * b,
         "÷": (a, b) => this.divide(a, b),
-        "" : (a, b) => a
+        "": (a, b) => a
     };
 }
 
@@ -37,9 +37,11 @@ getComma() {
 
 getOperator(str)
 {
-    this.needReset = false;
     this.left = this.makeValid(this.left);
-    if(this.operator != "") this.operate();
+    if(this.operator != "") {
+        this.operate();
+        this.needReset = false;
+    }
     this.operator = str;
     this.enableComma();
     this.displayOperation();
