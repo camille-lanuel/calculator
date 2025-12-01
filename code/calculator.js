@@ -24,14 +24,14 @@ class Calculator
 getDigit(d)
 {
     if(this.needReset) this.reset();
-    if(this.operator === "") {
-        if(this.left === "0") this.left = "";
-        this.left += d
-    } else{
-        if(this.right === "0") this.right = "";
-        this.right += d;
-    }
+    this.operator === "" ? this.left = this.appendDigit(this.left, d) : this.right = this.appendDigit(this.right, d)
     this.displayOperation();
+}
+
+appendDigit(str, d)
+{
+    if(str === "0") str = "";
+    return str + d
 }
 
 getComma() {
@@ -44,7 +44,7 @@ getComma() {
 getOperator(str)
 {
     this.left = this.makeValid(this.left);
-    if(this.operator != "") {
+    if(this.operator !== "") {
         let res = this.operate();
         if(Number.isNaN(res)) return;
     }
