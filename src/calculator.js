@@ -8,6 +8,7 @@ class Calculator
     this.left = "";
     this.right = "";
     this.operator = "";
+    this.needReset = false;
 
     this.operations = {
         "+": (a, b) => a + b,
@@ -22,22 +23,21 @@ class Calculator
 
 getDigit(d)
 {
+    if(this.needReset) this.reset();
     (this.operator === "") ? this.left += d : this.right += d;
     this.displayOperation();
 }
 
 getComma() {
-    if(this.operator === "") {
-        this.left = this.makeValid(this.left) + '.';
-    } else {
-        this.right = this.makeValid(this.right) + '.';
-    }
+    if(this.needReset) this.reset();
+    this.operator === "" ? this.left = this.makeValid(this.left) + '.' : this.right = this.makeValid(this.right) + '.';
     this.disableComma();
     this.displayOperation();
 }
 
 getOperator(str)
 {
+    this.needReset = false;
     this.left = this.makeValid(this.left);
     if(this.operator != "") this.operate();
     this.operator = str;
@@ -59,6 +59,7 @@ operate()
     this.left = (this.left === 0) ? "" : this.left = this.left.toString();
     this.right = "";
     this.operator = "";
+    this.needReset = true;
 
     this.displayResult();
     this.left.includes('.') ? this.disableComma() : this.enableComma();
@@ -93,6 +94,7 @@ reset()
     this.left = "";
     this.right = "";
     this.operator = "";
+    this.needReset = false;
     this.enableComma();
     this.displayOperation();
     this.displayResult();
