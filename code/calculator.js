@@ -66,7 +66,7 @@ operate()
         return NaN;
     }
     let res = Math.round((Number(this.left) + Number.EPSILON) * 100000) / 100000;
-    this.left = (res === 0) ? "" : res.toString();
+    this.left = res.toString();
     this.right = "";
     this.operator = "";
     this.needReset = true;
