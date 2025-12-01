@@ -41,8 +41,8 @@ getOperator(str)
     if(this.operator != "") {
         let res = this.operate();
         if(Number.isNaN(res)) return;
-        this.needReset = false;
     }
+    this.needReset = false;
     this.operator = str;
     this.enableComma();
     this.displayOperation();
