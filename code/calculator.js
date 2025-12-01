@@ -24,7 +24,13 @@ class Calculator
 getDigit(d)
 {
     if(this.needReset) this.reset();
-    (this.operator === "") ? this.left += d : this.right += d;
+    if(this.operator === "") {
+        if(this.left === "0") this.left = "";
+        this.left += d
+    } else{
+        if(this.right === "0") this.right = "";
+        this.right += d;
+    }
     this.displayOperation();
 }
 
