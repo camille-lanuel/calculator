@@ -13,7 +13,8 @@ class Calculator
         "+": (a, b) => a + b,
         "−": (a, b) => a - b,
         "×": (a, b) => a * b,
-        "÷": (a, b) => this.divide(a, b)
+        "÷": (a, b) => this.divide(a, b),
+        "" : (a, b) => a
     };
 }
 
