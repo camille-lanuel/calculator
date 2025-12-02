@@ -1,6 +1,7 @@
 class Calculator
 {
-constructor(display, result, comma) {
+constructor(display, result, comma)
+{
     this.display = display;
     this.result = result;
     this.comma = comma;
@@ -28,7 +29,8 @@ getDigit(d)
     this.displayOperation();
 }
 
-getComma() {
+getComma()
+{
     if(this.needReset) this.reset();
     this.operator === "" ? this.left = this.makeValid(this.left) + '.' : this.right = this.makeValid(this.right) + '.';
     this.disableComma();
@@ -141,7 +143,7 @@ divide(a, b)
     return a / b;
 }
 
-} //end Calculator
+} //class Calculator
 
 const comma = document.getElementById("comma");
 const display = document.getElementById("display");
