@@ -24,19 +24,13 @@ class Calculator
 getDigit(d)
 {
     if(this.needReset) this.reset();
-    this.operator === "" ? this.left = this.appendDigit(this.left, d) : this.right = this.appendDigit(this.right, d)
+    this.operator === "" ? this.left += d : this.right += d;
     this.displayOperation();
-}
-
-appendDigit(str, d)
-{
-    if(str === "0") str = "";
-    return str + d
 }
 
 getComma() {
     if(this.needReset) this.reset();
-    this.operator === "" ? this.left = this.makeValid(this.left) + '.' : this.right = this.makeValid(this.right) + '.';
+    this.operator === "" ? this.left += '.' : this.right += '.';
     this.disableComma();
     this.displayOperation();
 }
@@ -131,8 +125,7 @@ del()
 
 makeValid(str) {
     if(str === "") return "0";
-    if(str.endsWith('.')) return str.slice(0, -1);
-    return str;
+    return Number(str).toString();
 }
 
 divide(a, b)
