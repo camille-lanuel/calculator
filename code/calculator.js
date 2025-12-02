@@ -125,8 +125,7 @@ del()
 
 removeFrontZero(str)
 {
-    if(str === "0") return "";
-    return str;
+    return str === "0" ? "" : str;
 }
 
 makeValid(str) {
