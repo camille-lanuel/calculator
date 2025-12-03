@@ -73,6 +73,17 @@ footer {
 
 /* Buttons */
 
+#buttons {
+    display:flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.row {
+    column-gap: 8px;
+    display: flex;
+}
+
 button {
     background-color: var(--button);
     border: none;
@@ -84,26 +95,15 @@ button {
     width: 5rem;
 }
 
+button#clear, button#delete {
+    width: 50%;
+}
+
 button:hover {
     background-color: var(--hover);
     cursor:pointer;
 }
 
-button#clear, button#delete {
-    width: 50%;
-}
-
 button:disabled {
     background-color: var(--diasbled);
-}
-
-#buttons {
-    display:flex;
-    flex-direction: column;
-    row-gap: 8px;
-}
-
-.row {
-    column-gap: 8px;
-    display: flex;
 }
