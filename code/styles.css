@@ -8,6 +8,10 @@
 
 /* General */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--bkg);
     color: var(--txt);
@@ -53,13 +57,12 @@ footer {
 
 #display, #result {
     align-content: center;
-    box-sizing: border-box;
     height: 2rem;
-    max-width: 22.625rem;
-    padding: 0 8px;
-    overflow: scroll;
+    max-width: 21.5rem;
+    padding: 0;
+    overflow-x: scroll;
     text-align: right;
-    text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 #display {
@@ -74,7 +77,7 @@ footer {
 /* Buttons */
 
 #buttons {
-    display:flex;
+    display: flex;
     flex-direction: column;
     row-gap: 8px;
 }
@@ -101,7 +104,7 @@ button#clear, button#delete {
 
 button:hover {
     background-color: var(--hover);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 button:disabled {
