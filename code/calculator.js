@@ -22,14 +22,14 @@ constructor(display, result, comma)
 
 // Calculator logic
 
-getDigit(d)
+appendDigit(d)
 {
     if(this.needReset) this.reset();
     this.operator === "" ? this.left = this.removeFrontZero(this.left) + d : this.right = this.removeFrontZero(this.right) + d;
     this.displayOperation();
 }
 
-getComma()
+appendComma()
 {
     if(this.needReset) this.reset();
     this.operator === "" ? this.left = this.makeValid(this.left) + '.' : this.right = this.makeValid(this.right) + '.';
@@ -37,7 +37,7 @@ getComma()
     this.displayOperation();
 }
 
-getOperator(str)
+appendOperator(str)
 {
     this.left = this.makeValid(this.left);
     if(this.operator !== "") {
