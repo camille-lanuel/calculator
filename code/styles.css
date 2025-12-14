@@ -4,7 +4,7 @@
     --button: #acc69e;
     --hover: #ffd589;
     --diasbled: #a4ae9e;
-    --col-width: calc(36px + 3rem);
+    --col-width: calc(32px + 3rem);
     --gap-size: min(8px, 0.5rem);
     --calc-width: calc(4 * var(--col-width) + 5 * var(--gap-size) + 2px)
 }
