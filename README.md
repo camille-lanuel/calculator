@@ -17,3 +17,4 @@ This is my solution to the [calculator app](https://www.theodinproject.com/lesso
 # TODO
 
 - [ ] Handle keyboard input
+- [ ] Put UI handling in a separate class
