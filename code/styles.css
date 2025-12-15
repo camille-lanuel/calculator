@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,700);
+@import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,600,700);
 
 :root {
     --bkg: hsl(20, 10%, 95%);
@@ -10,7 +10,7 @@
     --gap-size: min(8px, 0.5rem);
     --col-width: minmax(min-content, calc(32px + 3rem));
     --calc-width: calc(4 * var(--col-width) + 5 * var(--gap-size) + 4px);
-    --border: 2px solid var(--txt)
+    --border: 1px solid var(--txt)
 }
 
 /* General */
@@ -31,6 +31,7 @@ body {
 }
 
 h1 {
+    font-weight: 600;
     margin-top: 0;
 }
 
@@ -75,7 +76,7 @@ footer {
 
 #result {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* Buttons */
