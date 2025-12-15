@@ -1,4 +1,4 @@
-This is my solution to the [calculator app](https://www.theodinproject.com/lessons/foundations-calculator) from The Odin Project.
+This is my solution to the [calculator app](https://www.theodinproject.com/lessons/foundations-calculator) for The Odin Project.
 
 ![](screenshot.png)
 
@@ -17,4 +17,3 @@ This is my solution to the [calculator app](https://www.theodinproject.com/lesso
 # TODO
 
 - [ ] Handle keyboard input
-- [ ] Put UI handling in a separate class
