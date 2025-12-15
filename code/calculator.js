@@ -163,9 +163,9 @@ class CalculatorController
         this.model = model;
 
         this.model.subscribe(
-            this.updateDisplay.bind(this),
-            this.updateResult.bind(this),
-            this.handleCommaState.bind(this)
+            (left, operator, right) => this.view.displayOperation(left, operator, right),
+            (result) => this.view.displayResult(result),
+            (enabled) => this.handleCommaState(enabled)
         );
 
         this.view.setEvents({
