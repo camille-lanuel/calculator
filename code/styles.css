@@ -5,7 +5,7 @@
     --txt: hsl(154, 25%, 25%);
     --button: hsl(154, 25%, 30%);
     --hover: hsl(34, 80%, 75%);
-    --diasbled: hsl(34, 20%, 75%);
+    --diasbled: hsl(34, 20%, 80%);
 
     --gap-size: min(8px, 0.5rem);
     --col-width: minmax(min-content, calc(32px + 3rem));
@@ -31,7 +31,7 @@ body {
 }
 
 ::selection {
-    background-color: var(--diasbled);
+    background-color: var(--hover);
 }
 
 h1 {
@@ -58,7 +58,6 @@ footer {
 /* Screen display */
 
 #screen {
-    background-color: var(--hover);
     border-radius: var(--gap-size);
     margin-bottom: var(--gap-size);
     padding: 0 var(--gap-size);
