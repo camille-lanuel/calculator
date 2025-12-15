@@ -1,11 +1,11 @@
 @import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,700);
 
 :root {
-    --bkg: hsl(34, 80%, 95%);
+    --bkg: hsl(34, 100%, 95%);
     --txt: hsl(154, 25%, 30%);
     --button: var(--txt);
-    --accent: hsl(34, 80%, 75%);
-    --diasbled: hsl(34, 20%, 75%);
+    --accent: hsl(34, 100%, 70%);
+    --diasbled: hsl(34, 25%, 70%);
 
     --gap-size: min(8px, 0.5rem);
     --col-width: minmax(min-content, calc(32px + 3rem));
