@@ -1,11 +1,11 @@
 @import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,600,700);
 
 :root {
-    --bkg: hsl(20, 10%, 95%);
-    --txt: hsl(20, 10%, 20%);
+    --bkg: hsl(20, 100%, 95%);
+    --txt: hsl(20, 50%, 20%);
     --button: var(--bkg);
     --accent: hsl(20, 100%, 75%);
-    --diasbled: hsl(20, 10%, 75%);
+    --diasbled: hsl(20, 20%, 75%);
 
     --gap-size: min(8px, 0.5rem);
     --col-width: minmax(min-content, calc(32px + 3rem));
@@ -107,5 +107,6 @@ button:active {
 
 button:disabled {
     background-color: var(--diasbled);
+    box-shadow: inset 0 4px 8px hsl(20, 20%, 25%);
     cursor: not-allowed;
 }
