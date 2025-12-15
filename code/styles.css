@@ -27,7 +27,7 @@ body {
     margin: auto;
     margin-bottom: 3rem;
     padding: 16px;
-    max-width: 100vw;
+    max-width: max-content;
 }
 
 ::selection {
