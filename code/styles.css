@@ -4,8 +4,8 @@
     --bkg: hsl(34, 80%, 90%);
     --txt: hsl(154, 25%, 25%);
     --button: hsl(154, 25%, 30%);
-    --hover: hsl(34, 80%, 80%);
-    --diasbled: hsl(34, 20%, 80%);
+    --hover: hsl(34, 80%, 75%);
+    --diasbled: hsl(34, 20%, 75%);
 
     --gap-size: min(8px, 0.5rem);
     --col-width: minmax(min-content, calc(32px + 3rem));
