@@ -10,7 +10,6 @@
     --gap-size: min(8px, 0.5rem);
     --col-width: minmax(min-content, calc(32px + 3rem));
     --calc-width: calc(4 * var(--col-width) + 5 * var(--gap-size) + 4px);
-    --border: 1px solid var(--txt)
 }
 
 /* General */
@@ -18,8 +17,7 @@
 body {
     background-color: var(--bkg);
     color: var(--txt);
-    font-family: 'Spline Sans Mono', monospace;
-    font-size: 1.125rem;
+    font: 1.125rem 'Spline Sans Mono', monospace;
     margin: auto;
     margin-bottom: 3rem;
     padding: 16px;
@@ -36,9 +34,7 @@ h1 {
 }
 
 #calculator, h1 {
-    border: var(--border);
-    border-radius: calc(var(--gap-size));
-    padding: var(--gap-size);
+    padding: 0;
     width: var(--calc-width);
 }
 
@@ -55,9 +51,7 @@ footer {
 /* Screen display */
 
 #screen {
-    border-radius: var(--gap-size);
     margin-bottom: var(--gap-size);
-    padding: 0 var(--gap-size);
 }
 
 #display, #result {
@@ -83,19 +77,19 @@ footer {
 
 #buttons {
     display: grid;
+    grid-auto-rows: calc(12px + 3rem);
     grid-template-columns: repeat(4, var(--col-width));
     gap: var(--gap-size);
 }
 
 button {
     background-color: var(--button);
-    border: var(--border);
-    border-radius: calc(0.5 * var(--gap-size));
+    border: none;
+    box-shadow: 0 4px 8px hsl(20, 50%, 75%);
+    border-radius: var(--gap-size);
     color: inherit;
     cursor: pointer;
-    font-family: inherit;
-    font-size: inherit;
-    height: calc(28px + 2rem);
+    font: inherit;
 }
 
 button#clear, button#delete {
@@ -104,6 +98,11 @@ button#clear, button#delete {
 
 button:hover {
     background-color: var(--accent);
+}
+
+button:active {
+    background-color: var(--accent);
+    box-shadow: inset 0 4px 8px hsl(20, 50%, 25%);
 }
 
 button:disabled {
