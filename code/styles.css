@@ -1,31 +1,32 @@
 @import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,600,700);
 
 :root {
-    --bkg: hsl(20, 100%, 95%);
-    --txt: hsl(20, 50%, 20%);
-    --button: var(--bkg);
-    --accent: hsl(20, 100%, 75%);
-    --diasbled: hsl(20, 20%, 75%);
+    --color-bkg: hsl(20, 100%, 95%);
+    --color-text: hsl(20, 50%, 25%);
+    --color-accent: hsl(20, 100%, 75%);
+    --color-shadow: hsl(20, 50%, 75%);
+    --color-disabled: hsl(20, 20%, 75%);
+    --color-shadow-disabled: hsl(20, 20%, 25%);
 
-    --gap-size: min(8px, 0.5rem);
-    --col-width: minmax(min-content, calc(32px + 3rem));
-    --calc-width: calc(4 * var(--col-width) + 5 * var(--gap-size) + 4px);
+    --size-gap: min(8px, 0.5rem);
+    --size-col-width: minmax(min-content, calc(32px + 3rem));
+    --size-calc-width: calc(4 * var(--size-col-width) + 5 * var(--size-gap) + 4px);
 }
 
 /* General */
 
 body {
-    background-color: var(--bkg);
-    color: var(--txt);
+    background-color: var(--color-bkg);
+    color: var(--color-text);
     font: 1.125rem 'Spline Sans Mono', monospace;
     margin: auto;
-    margin-bottom: 3rem;
+    margin-bottom: calc(2rem + 3 * 16px);
     padding: 16px;
     max-width: max-content;
 }
 
 ::selection {
-    background-color: var(--accent);
+    background-color: var(--color-accent);
 }
 
 h1 {
@@ -35,14 +36,14 @@ h1 {
 
 #calculator, h1 {
     padding: 0;
-    width: var(--calc-width);
+    width: var(--size-calc-width);
 }
 
 footer {
     bottom: 0;
-    background-color: var(--bkg);
+    background-color: var(--color-bkg);
     left: 0;
-    padding: var(--gap-size) 0;
+    padding: 16px 0;
     position: fixed;
     text-align: center;
     width: 100%;
@@ -51,7 +52,7 @@ footer {
 /* Screen display */
 
 #screen {
-    margin-bottom: var(--gap-size);
+    margin-bottom: var(--size-gap);
 }
 
 #display, #result {
@@ -78,15 +79,15 @@ footer {
 #buttons {
     display: grid;
     grid-auto-rows: calc(12px + 3rem);
-    grid-template-columns: repeat(4, var(--col-width));
-    gap: var(--gap-size);
+    grid-template-columns: repeat(4, var(--size-col-width));
+    gap: var(--size-gap);
 }
 
 button {
-    background-color: var(--button);
+    background-color: inherit;
     border: none;
-    box-shadow: 0 4px 8px hsl(20, 50%, 75%);
-    border-radius: var(--gap-size);
+    box-shadow: 0 4px 8px var(--color-shadow);
+    border-radius: var(--size-gap);
     color: inherit;
     cursor: pointer;
     font: inherit;
@@ -97,16 +98,16 @@ button#clear, button#delete {
 }
 
 button:hover {
-    background-color: var(--accent);
+    background-color: var(--color-accent);
 }
 
 button:active {
-    background-color: var(--accent);
-    box-shadow: inset 0 4px 8px hsl(20, 50%, 25%);
+    background-color: var(--color-accent);
+    box-shadow: inset 0 4px 8px var(--color-text);
 }
 
 button:disabled {
-    background-color: var(--diasbled);
-    box-shadow: inset 0 4px 8px hsl(20, 20%, 25%);
+    background-color: var(--color-disabled);
+    box-shadow: inset 0 4px 8px var(--color-shadow-disabled);
     cursor: not-allowed;
 }
