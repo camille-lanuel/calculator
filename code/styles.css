@@ -1,23 +1,19 @@
 @import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,700);
 
 :root {
-    --bkg: hsl(34, 100%, 95%);
-    --txt: hsl(154, 25%, 30%);
-    --button: var(--txt);
-    --accent: hsl(34, 100%, 70%);
-    --diasbled: hsl(34, 25%, 70%);
+    --bkg: hsl(20, 10%, 95%);
+    --txt: hsl(20, 10%, 20%);
+    --button: var(--bkg);
+    --accent: hsl(20, 100%, 75%);
+    --diasbled: hsl(20, 10%, 75%);
 
     --gap-size: min(8px, 0.5rem);
     --col-width: minmax(min-content, calc(32px + 3rem));
     --calc-width: calc(4 * var(--col-width) + 5 * var(--gap-size) + 4px);
-    --border: 2px solid var(--button)
+    --border: 2px solid var(--txt)
 }
 
 /* General */
-
-* {
-    box-sizing: border-box;
-}
 
 body {
     background-color: var(--bkg);
@@ -40,7 +36,7 @@ h1 {
 
 #calculator, h1 {
     border: var(--border);
-    border-radius: calc(2 * var(--gap-size));
+    border-radius: calc(var(--gap-size));
     padding: var(--gap-size);
     width: var(--calc-width);
 }
@@ -93,8 +89,8 @@ footer {
 button {
     background-color: var(--button);
     border: var(--border);
-    border-radius: var(--gap-size);
-    color: var(--bkg);
+    border-radius: calc(0.5 * var(--gap-size));
+    color: inherit;
     cursor: pointer;
     font-family: inherit;
     font-size: inherit;
@@ -107,11 +103,9 @@ button#clear, button#delete {
 
 button:hover {
     background-color: var(--accent);
-    color: inherit;
 }
 
 button:disabled {
     background-color: var(--diasbled);
-    color: inherit;
     cursor: not-allowed;
 }
