@@ -51,7 +51,7 @@ class CalculatorModel
             "+": (a, b) => a + b,
             "−": (a, b) => a - b,
             "×": (a, b) => a * b,
-            "÷": (a, b) => this.divide(a, b),
+            "÷": (a, b) => this.#divide(a, b),
             "": (a, b) => a
         };
     }
@@ -67,19 +67,19 @@ class CalculatorModel
 
     appendDigit(d) {
         if(this.needReset) this.reset();
-        this.operator === "" ? this.left = this.removeFrontZero(this.left) + d : this.right = this.removeFrontZero(this.right) + d;
+        this.operator === "" ? this.left = this.#removeFrontZero(this.left) + d : this.right = this.#removeFrontZero(this.right) + d;
         this.onUpdate(this.left, this.operator, this.right);
     }
 
     appendComma() {
         if(this.needReset) this.reset();
-        this.operator === "" ? this.left = this.makeValid(this.left) + '.' : this.right = this.makeValid(this.right) + '.';
+        this.operator === "" ? this.left = this.#makeValid(this.left) + '.' : this.right = this.#makeValid(this.right) + '.';
         this.onCommaStateChange(false);
         this.onUpdate(this.left, this.operator, this.right);
     }
 
     appendOperator(str) {
-        this.left = this.makeValid(this.left);
+        this.left = this.#makeValid(this.left);
         if(this.operator !== "") {
             let res = this.operate();
             if(Number.isNaN(res)) return;
@@ -91,7 +91,7 @@ class CalculatorModel
     }
 
     operate() {
-        if(this.operator !== "") this.right = this.makeValid(this.right);
+        if(this.operator !== "") this.right = this.#makeValid(this.right);
         this.onUpdate(this.left, this.operator, this.right);
 
         this.left = this.operations[this.operator](Number(this.left), Number(this.right));
@@ -139,15 +139,15 @@ class CalculatorModel
 
     // Auxilary functions
 
-    removeFrontZero(str) {
+    #removeFrontZero(str) {
         return str === "0" ? "" : str;
     }
 
-    makeValid(str) {
+    #makeValid(str) {
         return Number(str).toString();
     }
 
-    divide(a, b) {
+    #divide(a, b) {
         if(b === 0) {
             alert("Math Error");
             return NaN;
