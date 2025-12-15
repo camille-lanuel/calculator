@@ -91,6 +91,7 @@ class CalculatorModel
     }
 
     operate() {
+        this.left = this.#makeValid(this.left);
         if(this.operator !== "") this.right = this.#makeValid(this.right);
         this.onUpdate(this.left, this.operator, this.right);
 
