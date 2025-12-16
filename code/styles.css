@@ -1,113 +1,118 @@
 @import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,600,700);
 
 :root {
-    --color-bkg: hsl(20, 100%, 95%);
-    --color-text: hsl(20, 50%, 25%);
-    --color-accent: hsl(20, 100%, 75%);
-    --color-shadow: hsl(20, 50%, 75%);
-    --color-disabled: hsl(20, 20%, 75%);
-    --color-shadow-disabled: hsl(20, 20%, 25%);
+  --color-bkg: hsl(20, 100%, 95%);
+  --color-text: hsl(20, 50%, 25%);
+  --color-accent: hsl(20, 100%, 75%);
+  --color-shadow: hsl(20, 50%, 75%);
+  --color-disabled: hsl(20, 20%, 75%);
+  --color-shadow-disabled: hsl(20, 20%, 25%);
 
-    --size-gap: min(8px, 0.5rem);
-    --size-col-width: minmax(min-content, calc(32px + 3rem));
-    --size-calc-width: calc(4 * var(--size-col-width) + 5 * var(--size-gap) + 4px);
+  --size-gap: min(8px, 0.5rem);
+  --size-col-width: minmax(min-content, calc(32px + 3rem));
+  --size-calc-width: calc(
+    4 * var(--size-col-width) + 5 * var(--size-gap) + 4px
+  );
 }
 
 /* General */
 
 body {
-    background-color: var(--color-bkg);
-    color: var(--color-text);
-    font: 1.125rem 'Spline Sans Mono', monospace;
-    margin: auto;
-    margin-bottom: calc(2rem + 3 * 16px);
-    padding: 16px;
-    max-width: max-content;
+  background-color: var(--color-bkg);
+  color: var(--color-text);
+  font: 1.125rem "Spline Sans Mono", monospace;
+  margin: auto;
+  margin-bottom: calc(2rem + 3 * 16px);
+  padding: 16px;
+  max-width: max-content;
 }
 
 ::selection {
-    background-color: var(--color-accent);
+  background-color: var(--color-accent);
 }
 
 h1 {
-    font-weight: 600;
-    margin-top: 0;
+  font-weight: 600;
+  margin-top: 0;
 }
 
-#calculator, h1 {
-    padding: 0;
-    width: var(--size-calc-width);
+#calculator,
+h1 {
+  padding: 0;
+  width: var(--size-calc-width);
 }
 
 footer {
-    bottom: 0;
-    background-color: var(--color-bkg);
-    left: 0;
-    padding: 16px 0;
-    position: fixed;
-    text-align: center;
-    width: 100%;
+  bottom: 0;
+  background-color: var(--color-bkg);
+  left: 0;
+  padding: 16px 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
 }
 
 /* Screen display */
 
 #screen {
-    margin-bottom: var(--size-gap);
+  margin-bottom: var(--size-gap);
 }
 
-#display, #result {
-    align-content: center;
-    height: 2rem;
-    padding: 0;
-    overflow-x: scroll;
-    text-align: right;
-    width: 100%;
-    white-space: nowrap;
+#display,
+#result {
+  align-content: center;
+  height: 2rem;
+  padding: 0;
+  overflow-x: scroll;
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
 }
 
 #display {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 #result {
-    font-size: 1.5rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 /* Buttons */
 
 #buttons {
-    display: grid;
-    grid-auto-rows: calc(12px + 3rem);
-    grid-template-columns: repeat(4, var(--size-col-width));
-    gap: var(--size-gap);
+  display: grid;
+  grid-auto-rows: calc(12px + 3rem);
+  grid-template-columns: repeat(4, var(--size-col-width));
+  gap: var(--size-gap);
 }
 
 button {
-    background-color: inherit;
-    border: none;
-    box-shadow: 0 4px 8px var(--color-shadow);
-    border-radius: var(--size-gap);
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
+  background-color: inherit;
+  border: none;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  border-radius: var(--size-gap);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
 }
 
-button#clear, button#delete {
-    grid-column: span 2;
+button#clear,
+button#delete {
+  grid-column: span 2;
 }
 
 button:hover {
-    background-color: var(--color-accent);
+  background-color: var(--color-accent);
 }
 
 button:active {
-    background-color: var(--color-accent);
-    box-shadow: inset 0 4px 8px var(--color-text);
+  background-color: var(--color-accent);
+  box-shadow: inset 0 4px 8px var(--color-text);
 }
 
 button:disabled {
-    background-color: var(--color-disabled);
-    box-shadow: inset 0 4px 8px var(--color-shadow-disabled);
-    cursor: not-allowed;
+  background-color: var(--color-disabled);
+  box-shadow: inset 0 4px 8px var(--color-shadow-disabled);
+  cursor: not-allowed;
 }
