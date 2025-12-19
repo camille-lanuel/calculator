@@ -1,7 +1,7 @@
 @import url(https://fonts.bunny.net/css?family=spline-sans-mono:300,400,500,600,700);
 
 :root {
-  --color-bkg: hsl(160, 45%, 90%);
+  --color-bkg: hsl(160, 45%, 95%);
   --color-text: hsl(160, 45%, 20%);
   --color-accent: hsl(160, 45%, 70%);
   --color-disabled: hsl(160, 15%, 70%);
