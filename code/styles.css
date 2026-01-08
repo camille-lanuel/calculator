@@ -97,6 +97,7 @@ button {
 button#clear,
 button#delete {
   grid-column: span 2;
+  text-transform: uppercase;
 }
 
 button:hover {
