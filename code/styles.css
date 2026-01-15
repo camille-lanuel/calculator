@@ -5,7 +5,6 @@
   --color-text: hsl(160, 45%, 20%);
   --color-accent: hsl(160, 45%, 70%);
   --color-disabled: hsl(160, 15%, 70%);
-
   --size-gap: min(8px, 0.5rem);
   --size-col-width: minmax(min-content, calc(32px + 3rem));
   --size-calc-width: calc(
@@ -19,10 +18,10 @@ body {
   background-color: var(--color-bkg);
   color: var(--color-text);
   font: 1.125rem "Spline Sans Mono", monospace;
-  margin: auto;
   margin-bottom: calc(2rem + 3 * 16px);
-  padding: 16px;
+  margin: auto;
   max-width: max-content;
+  padding: 16px;
 }
 
 ::selection {
@@ -41,8 +40,8 @@ h1 {
 }
 
 footer {
-  bottom: 0;
   background-color: var(--color-bkg);
+  bottom: 0;
   left: 0;
   padding: 16px 0;
   position: fixed;
@@ -60,11 +59,11 @@ footer {
 #result {
   align-content: center;
   height: 2rem;
-  padding: 0;
   overflow-x: scroll;
+  padding: 0;
   text-align: right;
-  width: 100%;
   white-space: nowrap;
+  width: 100%;
 }
 
 #display {
@@ -80,15 +79,15 @@ footer {
 
 #buttons {
   display: grid;
+  gap: var(--size-gap);
   grid-auto-rows: calc(12px + 3rem);
   grid-template-columns: repeat(4, var(--size-col-width));
-  gap: var(--size-gap);
 }
 
 button {
   background-color: inherit;
-  border: 1px solid var(--color-accent);
   border-radius: var(--size-gap);
+  border: 1px solid var(--color-accent);
   color: inherit;
   cursor: pointer;
   font: inherit;
